@@ -159,11 +159,11 @@ function drawChoropleth(){
     });
 
     all_data.dc = {
-      NBH_NAMES: "Washington, DC",
-      population_total_val: 619371,
-      population_under_18_val: 105291,
-      single_mother_families_perc: 0.469,
-      children_in_poverty_perc: 0.287
+      NBH_NAMES: "East Palo Alto",
+      population_total_val: 29126,
+      population_under_18_val: 10114,
+      single_mother_families_perc: 0.169,
+      children_in_poverty_perc: 0.2155
     };
 
     displayPopBox();
@@ -213,9 +213,10 @@ function drawChoropleth(){
     );
 
     var maxBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(38.85,-77.10),
-      new google.maps.LatLng(38.97,-76.82)
+      new google.maps.LatLng(37,-123),
+      new google.maps.LatLng(38,-121.85)
     );
+
 
     // If a drag ends outside of our max bounds, bounce back to the default center.
     google.maps.event.addListener(gmap, "dragend", function() {
@@ -580,6 +581,7 @@ function drawPoints(type) {
       $schoolDisplay.find(".school-math").html(getDisplayValue(school.math_perc, "math_perc", "perc"));
       $schoolDisplay.find(".school-reading").html(getDisplayValue(school.reading_perc, "reading_perc", "perc"));
       $schoolDisplay.find(".school-grad").html(getDisplayValue(school.grad_perc, "grad_perc", "perc"));
+      // add other school data points here
       return $schoolDisplay;
     }
 
@@ -628,6 +630,7 @@ function drawChart(){
   chartSvg.append("g").attr("class","axis").attr("transform","translate(" + w + ",0)").call(right_axis)
     .append("text").text("Over 18").attr("class","axisTitle").attr("text-anchor","middle").attr("x",0).attr("y",-10);
 
+// here i need to figure out ethnicity data points 
   var ethdata = [
     {name: "white", under18: 0.23, over18: 0.32},
     {name: "black", under18: 0.60, over18: 0.55},
