@@ -8,7 +8,7 @@ var svg, projection, gmapProjection, path, g, gmap;
 var activeId = 'dc',
     choropleth_data, source_data;
 var all_data = {}, activeData = "population_total";
-var min_population = 100;
+var min_population = 0;
 var defaultColor = "#aaa";
 var chartSvg, labels, anchors, links, label_array = [], anchor_array = [];
 var chartMargin = {top: 30, right: 80, bottom: 10, left: 80};
@@ -411,7 +411,7 @@ function changeNeighborhoodData(new_data_column) {
   g.select("#neighborhoods").selectAll("path")
     .transition().duration(600)
     .style("fill", function(d) {
-      if(typeof all_data[d.properties.gis_id] ==="undefined" ||
+      if(typeof all_data[d.properties.gis_id] === "undefined" ||
         all_data[d.properties.gis_id].population_total < min_population ||
         !all_data[d.properties.gis_id][new_data_column] ||
         all_data[d.properties.gis_id][currentMetric] === '0'){
@@ -630,7 +630,7 @@ function drawChart(){
   chartSvg.append("g").attr("class","axis").attr("transform","translate(" + w + ",0)").call(right_axis)
     .append("text").text("Over 18").attr("class","axisTitle").attr("text-anchor","middle").attr("x",0).attr("y",-10);
 
-// here i need to figure out ethnicity data points 
+// here i need to figure out ethnicity data points
   var ethdata = [
     {name: "white", under18: 0.23, over18: 0.32},
     {name: "black", under18: 0.60, over18: 0.55},
