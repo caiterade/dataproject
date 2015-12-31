@@ -7,7 +7,7 @@
         "OBJECTID": 1,
         "gis_id": "Nbclus_6118",
         "NAME": "6118",
-        "NBH_NAMES": "East Palo Alto"
+        "NBH_NAMES": "EPA 1"
       },
       "geometry": {
         "type": "Polygon",
@@ -99,7 +99,7 @@
         "OBJECTID": 2,
         "gis_id": "Nbclus_6119",
         "NAME": "6119",
-        "NBH_NAMES": "East Palo Alto"
+        "NBH_NAMES": "EPA 2"
       },
       "geometry": {
         "type": "Polygon",
@@ -155,7 +155,7 @@
         "OBJECTID": 3,
         "gis_id": "Nbclus_6120",
         "NAME": "6120",
-        "NBH_NAMES": "East Palo Alto"
+        "NBH_NAMES": "EPA 3"
       },
       "geometry": {
         "type": "Polygon",
@@ -207,7 +207,7 @@
         "OBJECTID": 4,
         "gis_id": "Nbclus_6121",
         "NAME": "6121",
-        "NBH_NAMES": "East Palo Alto"
+        "NBH_NAMES": "EPA 4"
       },
       "geometry": {
         "type": "Polygon",

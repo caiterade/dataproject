@@ -8,7 +8,7 @@ var svg, projection, gmapProjection, path, g, gmap;
 var activeId = 'dc',
     choropleth_data, source_data;
 var all_data = {}, activeData = "population_total";
-var min_population = 0;
+var min_population = 100;
 var defaultColor = "#aaa";
 var chartSvg, labels, anchors, links, label_array = [], anchor_array = [];
 var chartMargin = {top: 30, right: 80, bottom: 10, left: 80};
@@ -411,8 +411,8 @@ function changeNeighborhoodData(new_data_column) {
   g.select("#neighborhoods").selectAll("path")
     .transition().duration(600)
     .style("fill", function(d) {
-      if(typeof all_data[d.properties.gis_id] === "undefined" ||
-        //all_data[d.properties.gis_id].population_total < min_population ||
+      if(typeof all_data[d.properties.gis_id] ==="undefined" ||
+        all_data[d.properties.gis_id].population_total < min_population ||
         !all_data[d.properties.gis_id][new_data_column] ||
         all_data[d.properties.gis_id][currentMetric] === '0'){
         return defaultColor;
