@@ -412,7 +412,7 @@ function changeNeighborhoodData(new_data_column) {
     .transition().duration(600)
     .style("fill", function(d) {
       if(typeof all_data[d.properties.gis_id] === "undefined" ||
-        all_data[d.properties.gis_id].population_total < min_population ||
+        //all_data[d.properties.gis_id].population_total < min_population ||
         !all_data[d.properties.gis_id][new_data_column] ||
         all_data[d.properties.gis_id][currentMetric] === '0'){
         return defaultColor;
